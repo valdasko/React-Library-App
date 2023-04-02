@@ -8,6 +8,11 @@ const Li = styled.li`
   background-color: ${(props) => props.bg || 'transparent'};
   color: white;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  transition: scale 0.3s ease-out;
+  cursor: pointer;
+  &:hover {
+    scale: 1.05;
+  }
 `;
 
 const Title = styled.h2`
@@ -34,7 +39,7 @@ function BookListItem({ item }) {
   const currentColor = catColors;
   return (
     <Li bg={currentColor}>
-      <Link to={`/books/${item.id}`}>
+      <Link to={`/singleBook/${item.id}`}>
         <Title>{item.title}</Title>
         <Author>by {item.author}</Author>
         <Year>{item.year}</Year>

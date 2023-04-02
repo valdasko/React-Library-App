@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './components/pages/Home';
 import AddBook from './components/pages/AddBook';
 import Footer from './components/layout/Footer';
+import SingleBook from './components/pages/SingleBook';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/addnewbook" element={<AddBook />} />
+        <Route path="/singleBook/:bookId" element={<SingleBook />} />
       </Routes>
       <Footer />
     </div>

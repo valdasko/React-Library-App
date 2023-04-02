@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { bookData } from '../../assets/db';
-import BookListItem from './BookListItem';
+import BookListItem from '../booksComponents/BookListItem';
 
 const Title = styled.h1`
   font-size: 3.4rem;
