@@ -3,16 +3,21 @@ import styled from 'styled-components';
 
 const Li = styled.li`
   margin-bottom: 1rem;
-  border: 1px solid black;
   padding: 1.5em;
   border-radius: 4px;
   background-color: ${(props) => props.bg || 'transparent'};
   color: white;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
 `;
 
 const Title = styled.h2`
   margin-bottom: 0.5rem;
   font-weight: 500;
+`;
+const Author = styled.h2`
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+  font-size: 1.6rem;
 `;
 
 const Year = styled.p`
@@ -31,6 +36,7 @@ function BookListItem({ item }) {
     <Li bg={currentColor}>
       <Link to={`/books/${item.id}`}>
         <Title>{item.title}</Title>
+        <Author>by {item.author}</Author>
         <Year>{item.year}</Year>
         <Read>
           Read:{' '}

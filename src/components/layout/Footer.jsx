@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const MyFooter = styled.footer`
   background-color: #333;
   color: #fff;
+  margin-top: 12rem;
 `;
 const FooterText = styled.h3`
   margin: 0;
