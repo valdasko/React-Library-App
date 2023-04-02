@@ -32,7 +32,10 @@ function Header() {
   return (
     <MyHeader>
       <Nav className="container">
-        <SiteLink to="/">Library</SiteLink>
+        <SiteLink to="/">
+          {' '}
+          <i className="fa fa-book" aria-hidden="true"></i> Library
+        </SiteLink>
         <SiteLink to="/addnewbook">Add book</SiteLink>
       </Nav>
     </MyHeader>

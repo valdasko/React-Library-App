@@ -84,3 +84,6 @@ textarea {
   min-width: 500px;
   resize: vertical;
 }
+.page {
+  height: 95vh;
+}

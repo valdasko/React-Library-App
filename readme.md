@@ -6,4 +6,4 @@ npm install styled-components
 
 1. Clone this repository, open terminal
 2. Type npm install
-3. Type npm run dev.
+3. Type npm start
