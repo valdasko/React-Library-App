@@ -21,6 +21,10 @@ const Button = styled.button`
     color: #f3bc77;
   }
 `;
+const Buttons = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
 function SingleBookPage() {
   const navigate = useNavigate();
@@ -44,10 +48,17 @@ function SingleBookPage() {
   function goBackHandler() {
     navigate('/');
   }
+  function readStatusHandler() {
+    foundBookObj.read = !foundBookObj.read;
+    console.log(foundBookObj);
+  }
 
   return (
     <div className="container page">
-      <Button onClick={goBackHandler}>Go back</Button>
+      <Buttons>
+        <Button onClick={goBackHandler}>Go back</Button>
+        <Button onClick={readStatusHandler}>Read</Button>
+      </Buttons>
       <BookItem book={foundBookObj} />
     </div>
   );
