@@ -29,10 +29,7 @@ const Buttons = styled.div`
 function SingleBookPage() {
   const navigate = useNavigate();
   const { bookId } = useParams();
-  console.log('bookId ===', bookId);
-  // pasiimti knygos id is books data
-  // sugeneruoti atitinkama knyga
-  console.log('bookData ===', bookData);
+
   // surasti bookData konkretu book objekta pagal bookId
   const foundBookObj = bookData.find((bObj) => bObj.id === +bookId);
   // ar radom ?
