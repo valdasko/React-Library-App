@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { bookData } from '../../assets/db';
 import BookItem from '../booksComponents/SingleBookItem';
@@ -29,32 +29,30 @@ const Buttons = styled.div`
 function SingleBookPage() {
   const navigate = useNavigate();
   const { bookId } = useParams();
-
-  // surasti bookData konkretu book objekta pagal bookId
   const foundBookObj = bookData.find((bObj) => bObj.id === +bookId);
-  // ar radom ?
+  const [read, setRead] = useState(foundBookObj.read);
+
   if (foundBookObj) {
     console.log('radom foundBookObj ===', foundBookObj);
   } else {
-    console.log('neradom');
-    // nunaviguoti programiskai i not found
     return <Navigate to="/not-found" />;
   }
-  // sugeneruoti visa jo informacija su stilium jsx
 
   function goBackHandler() {
     navigate('/');
   }
   function readStatusHandler() {
     foundBookObj.read = !foundBookObj.read;
-    console.log(foundBookObj);
+    setRead(!read);
   }
 
   return (
     <div className="container page">
       <Buttons>
         <Button onClick={goBackHandler}>Go back</Button>
-        <Button onClick={readStatusHandler}>Read</Button>
+        <Button onClick={readStatusHandler}>
+          {foundBookObj.read ? 'Not read' : 'Read'}
+        </Button>
       </Buttons>
       <BookItem book={foundBookObj} />
     </div>
